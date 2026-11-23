@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Tudásfa dokumentumok
  * Description: Az óvoda dokumentumai (PDF) a Dokumentumok oldalon, link a láblécben, és célzott módosítások a többi oldalon (valtozasok.json). Magától frissül a GitHubról (lassorta-tudasfa/tudasfa): óránként ellenőriz, az új verziót azonnal telepíti és alkalmazza. A többi oldalon csak a kért, célzott módosításokat végzi.
- * Version: 1.3.1
+ * Version: 1.3.2
  * Requires PHP: 7.4
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TUDASFA_DOK_VER', '1.3.1' );
+define( 'TUDASFA_DOK_VER', '1.3.2' );
 define( 'TUDASFA_DOK_REPO', 'https://github.com/lassorta-tudasfa/tudasfa/' );
 
 /* ------------------------------------------------------------------ *
@@ -138,7 +138,8 @@ function tudasfa_dok_telepit() {
 	update_option( 'tudasfa_doc_urls', $urls, false );
 
 	// Dokumentumok oldal.
-	$data = json_decode( strtr( wp_json_encode( $b['page']['data'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ), $urls ), true );
+	$up   = wp_upload_dir();
+	$data = json_decode( strtr( wp_json_encode( $b['page']['data'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ), $urls + array( '__UPLOADS__' => untrailingslashit( $up['baseurl'] ) ) ), true );
 	$ex   = get_page_by_path( 'dokumentumok', OBJECT, 'page' );
 	$arr  = array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Dokumentumok', 'post_name' => 'dokumentumok', 'post_content' => '' );
 	if ( $ex ) { $arr['ID'] = $ex->ID; $pid = wp_update_post( $arr ); } else { $pid = wp_insert_post( $arr ); }
