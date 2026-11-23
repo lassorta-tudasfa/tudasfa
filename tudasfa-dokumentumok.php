@@ -1,19 +1,20 @@
 <?php
 /**
  * Plugin Name: Tudásfa dokumentumok
- * Description: Az óvoda dokumentumai (PDF) a Dokumentumok oldalon, link a láblécben. Magától frissül a GitHubról (lassorta-tudasfa/tudasfa): óránként ellenőriz, az új verziót azonnal telepíti és alkalmazza. A többi oldalhoz nem nyúl.
- * Version: 1.2.1
+ * Description: Az óvoda dokumentumai (PDF) a Dokumentumok oldalon, link a láblécben, és célzott módosítások a többi oldalon (valtozasok.json). Magától frissül a GitHubról (lassorta-tudasfa/tudasfa): óránként ellenőriz, az új verziót azonnal telepíti és alkalmazza. A többi oldalon csak a kért, célzott módosításokat végzi.
+ * Version: 1.3.0
  * Requires PHP: 7.4
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TUDASFA_DOK_VER', '1.2.1' );
+define( 'TUDASFA_DOK_VER', '1.3.0' );
 define( 'TUDASFA_DOK_REPO', 'https://github.com/lassorta-tudasfa/tudasfa/' );
 
 /* ------------------------------------------------------------------ *
  * 1. Frissítéskezelő (Plugin Update Checker, GitHub main ág)
  * ------------------------------------------------------------------ */
 require_once __DIR__ . '/lib/plugin-update-checker/plugin-update-checker.php';
+require_once __DIR__ . '/valtozasok.php';
 $GLOBALS['tudasfa_dok_puc'] = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( TUDASFA_DOK_REPO, __FILE__, 'tudasfa-dokumentumok', 1 );
 $GLOBALS['tudasfa_dok_puc']->setBranch( 'main' );
 
@@ -172,7 +173,11 @@ function tudasfa_dok_telepit() {
 	if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance->files_manager ) ) {
 		\Elementor\Plugin::$instance->files_manager->clear_cache();
 	}
-	return array( 'oldal' => $pid, 'lablec' => $footer_ok, 'db' => count( $urls ) );
+	$valt = tudasfa_valtozasok();
+	if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance->files_manager ) ) {
+		\Elementor\Plugin::$instance->files_manager->clear_cache();
+	}
+	return array( 'oldal' => $pid, 'lablec' => $footer_ok, 'db' => count( $urls ), 'valtozasok' => $valt );
 }
 
 /* ------------------------------------------------------------------ *
