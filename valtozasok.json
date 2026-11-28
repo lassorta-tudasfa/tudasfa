@@ -1,6 +1,133 @@
 [
- {"id":"2026-11-28-rolunk-lightbox","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["napos-szoba","jatszovar","fajatekok"],"ertek":{"link_to":"file","open_lightbox":"yes"}},
- {"id":"2026-11-28-rolunk-lightbox-nagyok","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["epulet","fa-alatt","arnyas-hinta","mesefa-2"],"ertek":{"link_to":"file","open_lightbox":"yes"}},
- {"id":"2026-11-28-fooldal-lightbox","tipus":"beallitas","hol":"fooldal","widget":"image","kepek":["belso-udvar-gyerekek","mesefa","roller","potty-szoba","homokozo"],"ertek":{"link_to":"file","open_lightbox":"yes"}},
- {"id":"2026-11-28-kapcsolat-lightbox","tipus":"beallitas","hol":"kapcsolat","widget":"image","kepek":["belso-udvar"],"ertek":{"link_to":"file","open_lightbox":"yes"}}
+ {
+  "id": "2026-11-28-rolunk-lightbox",
+  "tipus": "beallitas",
+  "hol": "rolunk",
+  "widget": "image",
+  "kepek": [
+   "napos-szoba",
+   "jatszovar",
+   "fajatekok"
+  ],
+  "ertek": {
+   "link_to": "file",
+   "open_lightbox": "yes"
+  }
+ },
+ {
+  "id": "2026-11-28-rolunk-lightbox-nagyok",
+  "tipus": "beallitas",
+  "hol": "rolunk",
+  "widget": "image",
+  "kepek": [
+   "epulet",
+   "fa-alatt",
+   "arnyas-hinta",
+   "mesefa-2"
+  ],
+  "ertek": {
+   "link_to": "file",
+   "open_lightbox": "yes"
+  }
+ },
+ {
+  "id": "2026-11-28-fooldal-lightbox",
+  "tipus": "beallitas",
+  "hol": "fooldal",
+  "widget": "image",
+  "kepek": [
+   "belso-udvar-gyerekek",
+   "mesefa",
+   "roller",
+   "potty-szoba",
+   "homokozo"
+  ],
+  "ertek": {
+   "link_to": "file",
+   "open_lightbox": "yes"
+  }
+ },
+ {
+  "id": "2026-11-28-kapcsolat-lightbox",
+  "tipus": "beallitas",
+  "hol": "kapcsolat",
+  "widget": "image",
+  "kepek": [
+   "belso-udvar"
+  ],
+  "ertek": {
+   "link_to": "file",
+   "open_lightbox": "yes"
+  }
+ },
+ {
+  "id": "2026-11-28-nyitvatartas-fooldal",
+  "tipus": "szoveg",
+  "hol": "fooldal",
+  "regi": "<div><dt>Fenntartó</dt>",
+  "uj": "<div><dt>Nyitvatartás</dt><dd>Hétfő–péntek 7:30–17:00</dd></div><div><dt>Fenntartó</dt>"
+ },
+ {
+  "id": "2026-11-28-nyitvatartas-kapcsolat",
+  "tipus": "szoveg",
+  "hol": "kapcsolat",
+  "regi": "Vörösné Vida Tünde, alapítványi képviselő</p>",
+  "uj": "Vörösné Vida Tünde, alapítványi képviselő</p><p>Hétfő–péntek 7:30–17:00</p>"
+ },
+ {
+  "id": "2026-11-28-adat-megrendeles-torles",
+  "tipus": "regex",
+  "hol": "adatkezelesi-tajekoztato",
+  "minta": "#<section id=\"ak-9\">.*?</section>\\s*#s",
+  "uj": ""
+ },
+ {
+  "id": "2026-11-28-adat-megrendeles-tartalom",
+  "tipus": "regex",
+  "hol": "adatkezelesi-tajekoztato",
+  "minta": "#<a href=\"\\#ak-9\">[^<]*</a>\\s*#",
+  "uj": ""
+ },
+ {
+  "id": "2026-11-28-adat-szam-10",
+  "tipus": "szoveg",
+  "hol": "adatkezelesi-tajekoztato",
+  "regi": "<span>10</span>Adatfeldolgozás",
+  "uj": "<span>09</span>Adatfeldolgozás"
+ },
+ {
+  "id": "2026-11-28-adat-szam-11",
+  "tipus": "szoveg",
+  "hol": "adatkezelesi-tajekoztato",
+  "regi": "<span>11</span>Az adatkezelés biztonsága",
+  "uj": "<span>10</span>Az adatkezelés biztonsága"
+ },
+ {
+  "id": "2026-11-28-adat-szam-12",
+  "tipus": "szoveg",
+  "hol": "adatkezelesi-tajekoztato",
+  "regi": "<span>12</span>Az adatok továbbítása",
+  "uj": "<span>11</span>Az adatok továbbítása"
+ },
+ {
+  "id": "2026-11-28-adat-szam-13",
+  "tipus": "szoveg",
+  "hol": "adatkezelesi-tajekoztato",
+  "regi": "<span>13</span>Az Adatkezelési tájékoztató",
+  "uj": "<span>12</span>Az Adatkezelési tájékoztató"
+ },
+ {
+  "id": "2026-11-28-adat-urlap-1",
+  "tipus": "szoveg",
+  "hol": "adatkezelesi-tajekoztato",
+  "regi": "Weboldalunkon megtalálható elérhetőségeink bármelyikén, valamint az erre szolgáló üzenetküldő űrlapján keresztül egyaránt felveheti Velünk a kapcsolatot.",
+  "uj": "Weboldalunkon megtalálható elérhetőségeink (telefon, e-mail) bármelyikén felveheti Velünk a kapcsolatot."
+ },
+ {
+  "id": "2026-11-28-adat-urlap-2",
+  "tipus": "regex",
+  "hol": "adatkezelesi-tajekoztato",
+  "minta": "#<p>A kapcsolatfelvételi üzenetküldő űrlapon történő üzenetküldés esetén az alábbi adatait kezeljük:</p>\\s*<ul><li>név,</li><li>email cím,</li><li>telefonszám\\.</li></ul>\\s*<p>A kapcsolatfelvétel bármely más elérhetőségünkön történő kezdeményezése esetén pedig az alábbi#u",
+  "uj": "<p>Telefonos vagy e-mailes kapcsolatfelvétel esetén az alábbi"
+ }
 ]

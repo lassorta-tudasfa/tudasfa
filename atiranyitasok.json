@@ -1,0 +1,17 @@
+[
+ {"regi":"/hu/elerhetosegunk", "uj":"/kapcsolat/"},
+ {"regi":"/hu/rolunk", "uj":"/rolunk/", "alatta":true},
+ {"regi":"/hu/galeria", "uj":"/galeria/", "alatta":true},
+ {"regi":"/hu/csoportjaink", "uj":"/#csoportok", "alatta":true},
+ {"regi":"/hu/foglalkozasok", "uj":"/#foglalkozasok", "alatta":true},
+ {"regi":"/hu/munkatarsaink", "uj":"/munkatarsaink/", "alatta":true},
+ {"regi":"/hu/munkatarsak", "uj":"/munkatarsaink/", "alatta":true},
+ {"regi":"/hu/beiratkozas", "uj":"/beiratkozas/", "alatta":true},
+ {"regi":"/hu/esemenyek", "uj":"/esemenyek/", "alatta":true},
+ {"regi":"/hu/hirek", "uj":"/esemenyek/", "alatta":true},
+ {"regi":"/hu/dokumentumok", "uj":"/dokumentumok/", "alatta":true},
+ {"regi":"/hu/oldal-informaciok", "uj":"/adatkezelesi-tajekoztato/"},
+ {"regi":"/hu/adatkezelesi-tajekoztato", "uj":"/adatkezelesi-tajekoztato/", "alatta":true},
+ {"regi":"/hu", "uj":"/", "alatta":true},
+ {"regi":"/rolunk.html", "uj":"/rolunk/"}
+]

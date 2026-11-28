@@ -9,6 +9,7 @@
  *  - {"id":"…","tipus":"szoveg","hol":"munkatarsaink","regi":"…","uj":"…"}
  *  - {"id":"…","tipus":"kep","hol":"munkatarsaink","regi":"vida-tunde.webp","uj":"media/vida-tunde.jpg","alt":"…"}
  *  - {"id":"…","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["napos-szoba"],"ertek":{"link_to":"file","open_lightbox":"yes"}}
+ *  - {"id":"…","tipus":"regex","hol":"…","minta":"#…#s","uj":"…"}
  *  "hol": oldal slug, vagy "lablec" / "fejlec" (Elementor sablon), vagy "*" (minden oldal és sablon).
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -86,6 +87,15 @@ function tudasfa_valtozasok() {
 						}
 					}
 					return 0;
+				} );
+			} elseif ( 'regex' === $m['tipus'] ) {
+				$c = tudasfa_valt_bejar( $d, function ( &$n ) use ( $m ) {
+					$c = 0;
+					foreach ( $n as $k => &$v ) {
+						if ( is_string( $v ) && preg_match( $m['minta'], $v ) ) { $v = preg_replace( $m['minta'], $m['uj'], $v ); $c++; }
+					}
+					unset( $v );
+					return $c;
 				} );
 			} elseif ( 'szoveg' === $m['tipus'] ) {
 				$c = tudasfa_valt_bejar( $d, function ( &$n ) use ( $m ) {

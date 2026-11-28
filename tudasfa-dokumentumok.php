@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Tudásfa dokumentumok
  * Description: Az óvoda dokumentumai (PDF) a Dokumentumok oldalon, link a láblécben, és célzott módosítások a többi oldalon (valtozasok.json). Magától frissül a GitHubról (lassorta-tudasfa/tudasfa): óránként ellenőriz, az új verziót azonnal telepíti és alkalmazza. A többi oldalon csak a kért, célzott módosításokat végzi.
- * Version: 1.4.2
+ * Version: 1.5.0
  * Requires PHP: 7.4
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TUDASFA_DOK_VER', '1.4.2' );
+define( 'TUDASFA_DOK_VER', '1.5.0' );
 define( 'TUDASFA_DOK_REPO', 'https://github.com/lassorta-tudasfa/tudasfa/' );
 
 /* ------------------------------------------------------------------ *
@@ -15,6 +15,7 @@ define( 'TUDASFA_DOK_REPO', 'https://github.com/lassorta-tudasfa/tudasfa/' );
  * ------------------------------------------------------------------ */
 require_once __DIR__ . '/lib/plugin-update-checker/plugin-update-checker.php';
 require_once __DIR__ . '/valtozasok.php';
+require_once __DIR__ . '/atiranyitas.php';
 $GLOBALS['tudasfa_dok_puc'] = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( TUDASFA_DOK_REPO, __FILE__, 'tudasfa-dokumentumok', 1 );
 $GLOBALS['tudasfa_dok_puc']->setBranch( 'main' );
 
