@@ -5,3 +5,8 @@ body .elementor .tud-spark::before{height:38px!important}
 body .elementor .tud-spark.tud-tr::before{left:auto!important}
 body .elementor .tud-spark.tud-br::before{top:auto!important;left:auto!important}
 }
+/* Mobilon a háromképes sorban (Foglalkozások) csak az első kép napocskája marad */
+@media (max-width:767px){
+body .elementor .tud-act-photos .tud-spark.tud-tr::before,
+body .elementor .tud-act-photos .tud-spark.tud-br::before{display:none!important}
+}
