@@ -8,6 +8,7 @@
  * Műveletek:
  *  - {"id":"…","tipus":"szoveg","hol":"munkatarsaink","regi":"…","uj":"…"}
  *  - {"id":"…","tipus":"kep","hol":"munkatarsaink","regi":"vida-tunde.webp","uj":"media/vida-tunde.jpg","alt":"…"}
+ *  - {"id":"…","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["napos-szoba"],"ertek":{"link_to":"file","open_lightbox":"yes"}}
  *  "hol": oldal slug, vagy "lablec" / "fejlec" (Elementor sablon), vagy "*" (minden oldal és sablon).
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -72,7 +73,21 @@ function tudasfa_valtozasok() {
 		foreach ( tudasfa_valt_celok( $m['hol'] ) as $pid ) {
 			$d = json_decode( (string) get_post_meta( $pid, '_elementor_data', true ), true );
 			if ( ! is_array( $d ) ) { continue; }
-			if ( 'szoveg' === $m['tipus'] ) {
+			if ( 'beallitas' === $m['tipus'] ) {
+				$c = tudasfa_valt_bejar( $d, function ( &$n ) use ( $m ) {
+					if ( ! isset( $n['elType'], $n['settings'] ) || 'widget' !== $n['elType'] ) { return 0; }
+					if ( ! empty( $m['widget'] ) && ( ! isset( $n['widgetType'] ) || $n['widgetType'] !== $m['widget'] ) ) { return 0; }
+					$url = isset( $n['settings']['image']['url'] ) ? $n['settings']['image']['url'] : '';
+					if ( empty( $m['kepek'] ) || ! $url ) { return 0; }
+					foreach ( $m['kepek'] as $k ) {
+						if ( preg_match( '#/' . preg_quote( $k, '#' ) . '(-\d+x\d+|-scaled)?\.[a-z0-9]+$#i', $url ) ) {
+							$n['settings'] = array_merge( $n['settings'], $m['ertek'] );
+							return 1;
+						}
+					}
+					return 0;
+				} );
+			} elseif ( 'szoveg' === $m['tipus'] ) {
 				$c = tudasfa_valt_bejar( $d, function ( &$n ) use ( $m ) {
 					$c = 0;
 					foreach ( $n as $k => &$v ) {
@@ -124,3 +139,12 @@ add_action( 'rest_api_init', function () {
 		},
 	) );
 } );
+
+// Közös stílusjavítások (javitasok.css), minden verziónál a saját blokkját cseréli.
+function tudasfa_valt_css() {
+	$f = __DIR__ . '/javitasok.css';
+	$css = (string) wp_get_custom_css();
+	$css = preg_replace( '#\s*/\* TUDASFA-JAVITASOK START \*/.*?/\* TUDASFA-JAVITASOK END \*/#s', '', $css );
+	if ( file_exists( $f ) ) { $css = rtrim( $css ) . "\n/* TUDASFA-JAVITASOK START */\n" . trim( file_get_contents( $f ) ) . "\n/* TUDASFA-JAVITASOK END */\n"; }
+	wp_update_custom_css_post( $css );
+}
