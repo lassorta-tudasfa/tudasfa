@@ -136,5 +136,170 @@
   "hol": "adatkezelesi-tajekoztato",
   "regi": "<dd>Hetzner Online GmbH</dd></div><div><dt>Az adatfeldolgozó székhelye:</dt><dd>Industriestr. 25 91710 Gunzenhausen, Germany</dd></div><div><dt>Az adatfeldolgozó telefonszáma:</dt><dd>+49 (0)9831 505-0</dd></div><div><dt>Az adatfeldolgozó e-mail címe:</dt><dd>info@hetzner.com</dd>",
   "uj": "<dd>Sybell Informatika Korlátolt Felelősségű Társaság</dd></div><div><dt>Az adatfeldolgozó székhelye:</dt><dd>1138 Budapest, Tomori utca 34. 2. emelet</dd></div><div><dt>Az adatfeldolgozó telefonszáma:</dt><dd>+36 1 707 6726</dd></div><div><dt>Az adatfeldolgozó e-mail címe:</dt><dd>info@sybell.hu</dd>"
+ },
+ {
+  "id": "2026-11-28-karacsony-esemenyek",
+  "tipus": "klon",
+  "hol": "esemenyek",
+  "szulo": "tud-evgrid",
+  "forras": "tud-ev",
+  "masolatok": [
+   {
+    "csere": [
+     [
+      "/esemenyek/nyilt-nap/",
+      ""
+     ],
+     [
+      "<b>20</b><span>nov</span>",
+      "<b>10</b><span>dec</span>"
+     ],
+     [
+      ">Nyílt nap</span>",
+      ">Karácsony</span>"
+     ],
+     [
+      "Nyílt nap a Tudásfa Tanodában",
+      "Közös karácsonyi készülődés"
+     ],
+     [
+      "Szülőknek, akiknek gyermeke már hozzánk jár: az óvónő bemutat egy komplex foglalkozást a hónap munkájából.",
+      "Advent idején a szülőket is várjuk egy közös délelőttre: együtt kézműveskedünk a gyerekekkel, mézeskalácsot sütünk, és közösen hangolódunk az ünnepre."
+     ],
+     [
+      " 2026. november 20., péntek",
+      " 2026. december 10., csütörtök"
+     ],
+     [
+      "Szervező: Vörösné Vida Tünde",
+      "Szülőkkel közös program"
+     ]
+    ],
+    "torol": [
+     "Részletek ›"
+    ]
+   },
+   {
+    "csere": [
+     [
+      "/esemenyek/nyilt-nap/",
+      ""
+     ],
+     [
+      "<b>20</b><span>nov</span>",
+      "<b>dec</b><span>közepe</span>"
+     ],
+     [
+      ">Nyílt nap</span>",
+      ">Karácsony</span>"
+     ],
+     [
+      "Nyílt nap a Tudásfa Tanodában",
+      "Karácsonyi műsorok"
+     ],
+     [
+      "Szülőknek, akiknek gyermeke már hozzánk jár: az óvónő bemutat egy komplex foglalkozást a hónap munkájából.",
+      "December közepén minden csoport karácsonyi műsorral kedveskedik a szülőknek és a nagyszülőknek. Szeretettel várjuk a családokat!"
+     ],
+     [
+      " 2026. november 20., péntek",
+      " 2026. december közepe, a pontos napot hamarosan közöljük"
+     ],
+     [
+      "Szervező: Vörösné Vida Tünde",
+      "Szülőknek, nagyszülőknek"
+     ]
+    ],
+    "torol": [
+     "Részletek ›"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "2026-11-28-karacsony-fooldal",
+  "tipus": "klon",
+  "hol": "fooldal",
+  "szulo": "tud-evgrid",
+  "forras": "tud-ev",
+  "masolatok": [
+   {
+    "csere": [
+     [
+      "/esemenyek/nyilt-nap/",
+      ""
+     ],
+     [
+      "<b>20</b><span>nov</span>",
+      "<b>10</b><span>dec</span>"
+     ],
+     [
+      ">Nyílt nap</span>",
+      ">Karácsony</span>"
+     ],
+     [
+      "Nyílt nap a Tudásfa Tanodában",
+      "Közös karácsonyi készülődés"
+     ],
+     [
+      "Szülőknek, akiknek gyermeke már hozzánk jár: az óvónő bemutat egy komplex foglalkozást a hónap munkájából.",
+      "Advent idején a szülőket is várjuk egy közös délelőttre: együtt kézműveskedünk a gyerekekkel, mézeskalácsot sütünk, és közösen hangolódunk az ünnepre."
+     ],
+     [
+      " 2026. november 20., péntek",
+      " 2026. december 10., csütörtök"
+     ],
+     [
+      "Szervező: Vörösné Vida Tünde",
+      "Szülőkkel közös program"
+     ]
+    ],
+    "torol": [
+     "Részletek ›"
+    ]
+   },
+   {
+    "csere": [
+     [
+      "/esemenyek/nyilt-nap/",
+      ""
+     ],
+     [
+      "<b>20</b><span>nov</span>",
+      "<b>dec</b><span>közepe</span>"
+     ],
+     [
+      ">Nyílt nap</span>",
+      ">Karácsony</span>"
+     ],
+     [
+      "Nyílt nap a Tudásfa Tanodában",
+      "Karácsonyi műsorok"
+     ],
+     [
+      "Szülőknek, akiknek gyermeke már hozzánk jár: az óvónő bemutat egy komplex foglalkozást a hónap munkájából.",
+      "December közepén minden csoport karácsonyi műsorral kedveskedik a szülőknek és a nagyszülőknek. Szeretettel várjuk a családokat!"
+     ],
+     [
+      " 2026. november 20., péntek",
+      " 2026. december közepe, a pontos napot hamarosan közöljük"
+     ],
+     [
+      "Szervező: Vörösné Vida Tünde",
+      "Szülőknek, nagyszülőknek"
+     ]
+    ],
+    "torol": [
+     "Részletek ›"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "2026-11-28-esemenyek-hamarosan",
+  "tipus": "szoveg",
+  "hol": "esemenyek",
+  "regi": "A decemberi nyílt nap és a további programok időpontját is itt hirdetjük meg.",
+  "uj": "A januári nyílt nap és a további programok időpontját is itt hirdetjük meg."
  }
 ]

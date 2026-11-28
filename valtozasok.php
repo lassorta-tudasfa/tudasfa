@@ -74,7 +74,39 @@ function tudasfa_valtozasok() {
 		foreach ( tudasfa_valt_celok( $m['hol'] ) as $pid ) {
 			$d = json_decode( (string) get_post_meta( $pid, '_elementor_data', true ), true );
 			if ( ! is_array( $d ) ) { continue; }
-			if ( 'beallitas' === $m['tipus'] ) {
+			if ( 'klon' === $m['tipus'] ) {
+				$c = tudasfa_valt_bejar( $d, function ( &$n ) use ( $m ) {
+					if ( ! isset( $n['settings']['css_classes'], $n['elements'] ) || ! in_array( $m['szulo'], preg_split( '/\s+/', (string) $n['settings']['css_classes'] ), true ) ) { return 0; }
+					$minta = null;
+					foreach ( $n['elements'] as $ch ) {
+						if ( isset( $ch['settings']['css_classes'] ) && in_array( $m['forras'], preg_split( '/\s+/', (string) $ch['settings']['css_classes'] ), true ) ) { $minta = $ch; break; }
+					}
+					if ( ! $minta ) { return 0; }
+					$uj = array();
+					foreach ( $m['masolatok'] as $mas ) {
+						$x = $minta;
+						tudasfa_valt_bejar( $x, function ( &$q ) use ( $mas ) {
+							foreach ( $q as $k => &$v ) {
+								if ( is_string( $v ) ) { foreach ( $mas['csere'] as $cs ) { $v = str_replace( $cs[0], $cs[1], $v ); } }
+							}
+							unset( $v );
+							if ( isset( $q['elements'] ) && ! empty( $mas['torol'] ) ) {
+								$q['elements'] = array_values( array_filter( $q['elements'], function ( $e ) use ( $mas ) {
+									if ( ! isset( $e['elType'] ) || 'widget' !== $e['elType'] ) { return true; }
+									$j = wp_json_encode( $e, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+									foreach ( $mas['torol'] as $t ) { if ( false !== strpos( $j, $t ) ) { return false; } }
+									return true;
+								} ) );
+							}
+							if ( isset( $q['id'] ) && isset( $q['elType'] ) ) { $q['id'] = substr( md5( wp_generate_uuid4() ), 0, 7 ); }
+							return 0;
+						} );
+						$uj[] = $x;
+					}
+					$n['elements'] = $uj;
+					return 1;
+				} );
+			} elseif ( 'beallitas' === $m['tipus'] ) {
 				$c = tudasfa_valt_bejar( $d, function ( &$n ) use ( $m ) {
 					if ( ! isset( $n['elType'], $n['settings'] ) || 'widget' !== $n['elType'] ) { return 0; }
 					if ( ! empty( $m['widget'] ) && ( ! isset( $n['widgetType'] ) || $n['widgetType'] !== $m['widget'] ) ) { return 0; }
