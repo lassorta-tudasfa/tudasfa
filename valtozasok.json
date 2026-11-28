@@ -1,3 +1,6 @@
 [
- {"id":"2026-11-28-rolunk-lightbox","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["napos-szoba","jatszovar","fajatekok"],"ertek":{"link_to":"file","open_lightbox":"yes"}}
+ {"id":"2026-11-28-rolunk-lightbox","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["napos-szoba","jatszovar","fajatekok"],"ertek":{"link_to":"file","open_lightbox":"yes"}},
+ {"id":"2026-11-28-rolunk-lightbox-nagyok","tipus":"beallitas","hol":"rolunk","widget":"image","kepek":["epulet","fa-alatt","arnyas-hinta","mesefa-2"],"ertek":{"link_to":"file","open_lightbox":"yes"}},
+ {"id":"2026-11-28-fooldal-lightbox","tipus":"beallitas","hol":"fooldal","widget":"image","kepek":["belso-udvar-gyerekek","mesefa","roller","potty-szoba","homokozo"],"ertek":{"link_to":"file","open_lightbox":"yes"}},
+ {"id":"2026-11-28-kapcsolat-lightbox","tipus":"beallitas","hol":"kapcsolat","widget":"image","kepek":["belso-udvar"],"ertek":{"link_to":"file","open_lightbox":"yes"}}
 ]
