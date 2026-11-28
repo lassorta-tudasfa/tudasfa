@@ -129,5 +129,12 @@
   "hol": "adatkezelesi-tajekoztato",
   "minta": "#<p>A kapcsolatfelvételi üzenetküldő űrlapon történő üzenetküldés esetén az alábbi adatait kezeljük:</p>\\s*<ul><li>név,</li><li>email cím,</li><li>telefonszám\\.</li></ul>\\s*<p>A kapcsolatfelvétel bármely más elérhetőségünkön történő kezdeményezése esetén pedig az alábbi#u",
   "uj": "<p>Telefonos vagy e-mailes kapcsolatfelvétel esetén az alábbi"
+ },
+ {
+  "id": "2026-11-28-adat-sybell",
+  "tipus": "szoveg",
+  "hol": "adatkezelesi-tajekoztato",
+  "regi": "<dd>Hetzner Online GmbH</dd></div><div><dt>Az adatfeldolgozó székhelye:</dt><dd>Industriestr. 25 91710 Gunzenhausen, Germany</dd></div><div><dt>Az adatfeldolgozó telefonszáma:</dt><dd>+49 (0)9831 505-0</dd></div><div><dt>Az adatfeldolgozó e-mail címe:</dt><dd>info@hetzner.com</dd>",
+  "uj": "<dd>Sybell Informatika Korlátolt Felelősségű Társaság</dd></div><div><dt>Az adatfeldolgozó székhelye:</dt><dd>1138 Budapest, Tomori utca 34. 2. emelet</dd></div><div><dt>Az adatfeldolgozó telefonszáma:</dt><dd>+36 1 707 6726</dd></div><div><dt>Az adatfeldolgozó e-mail címe:</dt><dd>info@sybell.hu</dd>"
  }
 ]
